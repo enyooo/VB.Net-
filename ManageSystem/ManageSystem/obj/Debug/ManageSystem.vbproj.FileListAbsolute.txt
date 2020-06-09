@@ -1,0 +1,15 @@
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\bin\Debug\ManageSystem.exe.config
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\bin\Debug\ManageSystem.exe
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\bin\Debug\ManageSystem.pdb
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\bin\Debug\ManageSystem.xml
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.vbprojAssemblyReference.cache
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.EditUser.resources
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.Login.resources
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.Resources.resources
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.vbproj.GenerateResource.cache
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.vbproj.CoreCompileInputs.cache
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.exe
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.xml
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.pdb
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.NewUser.resources
+C:\Users\2017nec50_1\source\repos\ManageSystem\ManageSystem\obj\Debug\ManageSystem.ShowUsers.resources

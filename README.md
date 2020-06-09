@@ -1,2 +1,2 @@
 # VB.Net-
-VB Practice@2020.06 
+Rewrite Java project to VB Practice@2020.06 

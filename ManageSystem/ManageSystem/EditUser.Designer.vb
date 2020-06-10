@@ -47,6 +47,10 @@ Partial Class EditUser
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtEditTel = New System.Windows.Forms.TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnCancelPic = New System.Windows.Forms.Button()
+        Me.txtEditByID = New System.Windows.Forms.TextBox()
+        Me.btnSrcForEdit = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,7 +59,7 @@ Partial Class EditUser
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("MS UI Gothic", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label1.Location = New System.Drawing.Point(261, 27)
+        Me.Label1.Location = New System.Drawing.Point(272, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(180, 28)
         Me.Label1.TabIndex = 0
@@ -65,9 +69,9 @@ Partial Class EditUser
         '
         Me.btnEditCancel.AutoSize = True
         Me.btnEditCancel.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnEditCancel.Location = New System.Drawing.Point(358, 400)
+        Me.btnEditCancel.Location = New System.Drawing.Point(363, 450)
         Me.btnEditCancel.Name = "btnEditCancel"
-        Me.btnEditCancel.Size = New System.Drawing.Size(105, 32)
+        Me.btnEditCancel.Size = New System.Drawing.Size(125, 32)
         Me.btnEditCancel.TabIndex = 46
         Me.btnEditCancel.Text = "キャンセル"
         Me.btnEditCancel.UseVisualStyleBackColor = True
@@ -76,7 +80,7 @@ Partial Class EditUser
         '
         Me.btnEdit.AutoSize = True
         Me.btnEdit.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(138, 400)
+        Me.btnEdit.Location = New System.Drawing.Point(132, 450)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(125, 32)
         Me.btnEdit.TabIndex = 45
@@ -85,14 +89,14 @@ Partial Class EditUser
         '
         'txtEditAddress
         '
-        Me.txtEditAddress.Location = New System.Drawing.Point(202, 285)
+        Me.txtEditAddress.Location = New System.Drawing.Point(170, 341)
         Me.txtEditAddress.Name = "txtEditAddress"
         Me.txtEditAddress.Size = New System.Drawing.Size(300, 25)
         Me.txtEditAddress.TabIndex = 44
         '
         'txtEditSkill
         '
-        Me.txtEditSkill.Location = New System.Drawing.Point(474, 334)
+        Me.txtEditSkill.Location = New System.Drawing.Point(442, 390)
         Me.txtEditSkill.Name = "txtEditSkill"
         Me.txtEditSkill.Size = New System.Drawing.Size(120, 25)
         Me.txtEditSkill.TabIndex = 43
@@ -100,7 +104,7 @@ Partial Class EditUser
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(408, 337)
+        Me.Label10.Location = New System.Drawing.Point(376, 393)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(44, 18)
         Me.Label10.TabIndex = 42
@@ -110,7 +114,7 @@ Partial Class EditUser
         '
         Me.pdEditGra.FormattingEnabled = True
         Me.pdEditGra.Items.AddRange(New Object() {"大学院（博士）", "大学院（修士）", "大学", "高専", "短期大学", "専門・専修", "高校", "その他"})
-        Me.pdEditGra.Location = New System.Drawing.Point(181, 334)
+        Me.pdEditGra.Location = New System.Drawing.Point(149, 390)
         Me.pdEditGra.Name = "pdEditGra"
         Me.pdEditGra.Size = New System.Drawing.Size(130, 26)
         Me.pdEditGra.TabIndex = 41
@@ -118,7 +122,7 @@ Partial Class EditUser
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(64, 337)
+        Me.Label9.Location = New System.Drawing.Point(32, 393)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 18)
         Me.Label9.TabIndex = 40
@@ -127,7 +131,7 @@ Partial Class EditUser
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(64, 288)
+        Me.Label8.Location = New System.Drawing.Point(32, 344)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(44, 18)
         Me.Label8.TabIndex = 39
@@ -136,7 +140,7 @@ Partial Class EditUser
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(64, 242)
+        Me.Label7.Location = New System.Drawing.Point(32, 298)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 18)
         Me.Label7.TabIndex = 38
@@ -145,7 +149,7 @@ Partial Class EditUser
         'txtEditMail
         '
         Me.txtEditMail.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtEditMail.Location = New System.Drawing.Point(202, 194)
+        Me.txtEditMail.Location = New System.Drawing.Point(170, 250)
         Me.txtEditMail.Name = "txtEditMail"
         Me.txtEditMail.Size = New System.Drawing.Size(180, 25)
         Me.txtEditMail.TabIndex = 37
@@ -153,7 +157,7 @@ Partial Class EditUser
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(64, 197)
+        Me.Label6.Location = New System.Drawing.Point(32, 253)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(105, 18)
         Me.Label6.TabIndex = 36
@@ -162,7 +166,7 @@ Partial Class EditUser
         'dtpEditBirth
         '
         Me.dtpEditBirth.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpEditBirth.Location = New System.Drawing.Point(395, 146)
+        Me.dtpEditBirth.Location = New System.Drawing.Point(363, 202)
         Me.dtpEditBirth.Name = "dtpEditBirth"
         Me.dtpEditBirth.Size = New System.Drawing.Size(200, 25)
         Me.dtpEditBirth.TabIndex = 35
@@ -171,7 +175,7 @@ Partial Class EditUser
         '
         Me.pdEditDeparts.FormattingEnabled = True
         Me.pdEditDeparts.Items.AddRange(New Object() {"SS事業部G1", "SS事業部G2", "SI事業部G1", "SI事業部G2 ", "SI事業部G3", "SI事業部G4", "インバウンド事業部", "営業部", "管理部"})
-        Me.pdEditDeparts.Location = New System.Drawing.Point(138, 143)
+        Me.pdEditDeparts.Location = New System.Drawing.Point(106, 199)
         Me.pdEditDeparts.Name = "pdEditDeparts"
         Me.pdEditDeparts.Size = New System.Drawing.Size(140, 26)
         Me.pdEditDeparts.TabIndex = 34
@@ -179,7 +183,7 @@ Partial Class EditUser
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(309, 151)
+        Me.Label5.Location = New System.Drawing.Point(277, 207)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(80, 18)
         Me.Label5.TabIndex = 33
@@ -188,7 +192,7 @@ Partial Class EditUser
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(64, 151)
+        Me.Label4.Location = New System.Drawing.Point(32, 207)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 18)
         Me.Label4.TabIndex = 32
@@ -198,7 +202,7 @@ Partial Class EditUser
         '
         Me.btnEditPic.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnEditPic.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnEditPic.Location = New System.Drawing.Point(624, 187)
+        Me.btnEditPic.Location = New System.Drawing.Point(616, 193)
         Me.btnEditPic.Name = "btnEditPic"
         Me.btnEditPic.Size = New System.Drawing.Size(129, 38)
         Me.btnEditPic.TabIndex = 31
@@ -208,9 +212,10 @@ Partial Class EditUser
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(624, 18)
+        Me.PictureBox1.Location = New System.Drawing.Point(616, 24)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(129, 153)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 30
         Me.PictureBox1.TabStop = False
         '
@@ -218,7 +223,7 @@ Partial Class EditUser
         '
         Me.pdEditGender.FormattingEnabled = True
         Me.pdEditGender.Items.AddRange(New Object() {"男", "女"})
-        Me.pdEditGender.Location = New System.Drawing.Point(382, 90)
+        Me.pdEditGender.Location = New System.Drawing.Point(350, 146)
         Me.pdEditGender.Name = "pdEditGender"
         Me.pdEditGender.Size = New System.Drawing.Size(93, 26)
         Me.pdEditGender.TabIndex = 29
@@ -226,7 +231,7 @@ Partial Class EditUser
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(309, 94)
+        Me.Label3.Location = New System.Drawing.Point(277, 150)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(44, 18)
         Me.Label3.TabIndex = 28
@@ -234,7 +239,7 @@ Partial Class EditUser
         '
         'txtEditName
         '
-        Me.txtEditName.Location = New System.Drawing.Point(138, 91)
+        Me.txtEditName.Location = New System.Drawing.Point(106, 147)
         Me.txtEditName.Name = "txtEditName"
         Me.txtEditName.Size = New System.Drawing.Size(130, 25)
         Me.txtEditName.TabIndex = 27
@@ -242,7 +247,7 @@ Partial Class EditUser
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(64, 94)
+        Me.Label2.Location = New System.Drawing.Point(32, 150)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 18)
         Me.Label2.TabIndex = 26
@@ -251,7 +256,7 @@ Partial Class EditUser
         'txtEditTel
         '
         Me.txtEditTel.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtEditTel.Location = New System.Drawing.Point(202, 239)
+        Me.txtEditTel.Location = New System.Drawing.Point(170, 295)
         Me.txtEditTel.Name = "txtEditTel"
         Me.txtEditTel.Size = New System.Drawing.Size(160, 25)
         Me.txtEditTel.TabIndex = 47
@@ -266,11 +271,46 @@ Partial Class EditUser
         Me.PictureBox2.TabIndex = 48
         Me.PictureBox2.TabStop = False
         '
+        'btnCancelPic
+        '
+        Me.btnCancelPic.AutoSize = True
+        Me.btnCancelPic.Location = New System.Drawing.Point(616, 257)
+        Me.btnCancelPic.Name = "btnCancelPic"
+        Me.btnCancelPic.Size = New System.Drawing.Size(129, 38)
+        Me.btnCancelPic.TabIndex = 49
+        Me.btnCancelPic.Text = "取り消し"
+        Me.btnCancelPic.UseVisualStyleBackColor = True
+        '
+        'txtEditByID
+        '
+        Me.txtEditByID.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtEditByID.Location = New System.Drawing.Point(388, 70)
+        Me.txtEditByID.Name = "txtEditByID"
+        Me.txtEditByID.Size = New System.Drawing.Size(100, 25)
+        Me.txtEditByID.TabIndex = 50
+        '
+        'btnSrcForEdit
+        '
+        Me.btnSrcForEdit.AutoSize = True
+        Me.btnSrcForEdit.Location = New System.Drawing.Point(509, 68)
+        Me.btnSrcForEdit.Name = "btnSrcForEdit"
+        Me.btnSrcForEdit.Size = New System.Drawing.Size(75, 28)
+        Me.btnSrcForEdit.TabIndex = 51
+        Me.btnSrcForEdit.Text = "検索"
+        Me.btnSrcForEdit.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'EditUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(798, 506)
+        Me.Controls.Add(Me.btnSrcForEdit)
+        Me.Controls.Add(Me.txtEditByID)
+        Me.Controls.Add(Me.btnCancelPic)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.txtEditTel)
         Me.Controls.Add(Me.btnEditCancel)
@@ -328,4 +368,8 @@ Partial Class EditUser
     Friend WithEvents Label2 As Label
     Friend WithEvents txtEditTel As TextBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btnCancelPic As Button
+    Friend WithEvents txtEditByID As TextBox
+    Friend WithEvents btnSrcForEdit As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

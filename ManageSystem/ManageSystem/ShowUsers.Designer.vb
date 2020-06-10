@@ -60,8 +60,11 @@ Partial Class ShowUsers
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btnGoToEdit = New System.Windows.Forms.Button()
         Me.txtSrcBirth = New System.Windows.Forms.TextBox()
+        Me.txtSrcID = New System.Windows.Forms.TextBox()
+        Me.btnEditByID = New System.Windows.Forms.Button()
+        Me.btnDeleteByID = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvShowUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,7 +85,7 @@ Partial Class ShowUsers
         '
         Me.Logout.AutoSize = True
         Me.Logout.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Logout.Location = New System.Drawing.Point(914, 12)
+        Me.Logout.Location = New System.Drawing.Point(1036, 12)
         Me.Logout.Name = "Logout"
         Me.Logout.Size = New System.Drawing.Size(102, 32)
         Me.Logout.TabIndex = 1
@@ -93,7 +96,7 @@ Partial Class ShowUsers
         '
         Me.btnGoToNew.AutoSize = True
         Me.btnGoToNew.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnGoToNew.Location = New System.Drawing.Point(658, 12)
+        Me.btnGoToNew.Location = New System.Drawing.Point(906, 12)
         Me.btnGoToNew.Name = "btnGoToNew"
         Me.btnGoToNew.Size = New System.Drawing.Size(102, 32)
         Me.btnGoToNew.TabIndex = 2
@@ -113,7 +116,7 @@ Partial Class ShowUsers
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 129)
+        Me.Label2.Location = New System.Drawing.Point(38, 155)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 18)
         Me.Label2.TabIndex = 27
@@ -121,7 +124,7 @@ Partial Class ShowUsers
         '
         'txtSrcName
         '
-        Me.txtSrcName.Location = New System.Drawing.Point(61, 126)
+        Me.txtSrcName.Location = New System.Drawing.Point(88, 152)
         Me.txtSrcName.Name = "txtSrcName"
         Me.txtSrcName.Size = New System.Drawing.Size(100, 25)
         Me.txtSrcName.TabIndex = 28
@@ -129,7 +132,7 @@ Partial Class ShowUsers
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(167, 129)
+        Me.Label3.Location = New System.Drawing.Point(194, 155)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(44, 18)
         Me.Label3.TabIndex = 29
@@ -138,8 +141,8 @@ Partial Class ShowUsers
         'pdSrcGender
         '
         Me.pdSrcGender.FormattingEnabled = True
-        Me.pdSrcGender.Items.AddRange(New Object() {"男", "女"})
-        Me.pdSrcGender.Location = New System.Drawing.Point(217, 125)
+        Me.pdSrcGender.Items.AddRange(New Object() {"", "男", "女"})
+        Me.pdSrcGender.Location = New System.Drawing.Point(244, 151)
         Me.pdSrcGender.Name = "pdSrcGender"
         Me.pdSrcGender.Size = New System.Drawing.Size(74, 26)
         Me.pdSrcGender.TabIndex = 30
@@ -147,7 +150,7 @@ Partial Class ShowUsers
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(297, 129)
+        Me.Label4.Location = New System.Drawing.Point(324, 155)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 18)
         Me.Label4.TabIndex = 31
@@ -156,8 +159,8 @@ Partial Class ShowUsers
         'pdSrcDeparts
         '
         Me.pdSrcDeparts.FormattingEnabled = True
-        Me.pdSrcDeparts.Items.AddRange(New Object() {"SS事業部G1", "SS事業部G2", "SI事業部G1", "SI事業部G2 ", "SI事業部G3", "SI事業部G4", "インバウンド事業部", "営業部", "管理部"})
-        Me.pdSrcDeparts.Location = New System.Drawing.Point(347, 125)
+        Me.pdSrcDeparts.Items.AddRange(New Object() {"", "SS事業部G1", "SS事業部G2", "SI事業部G1", "SI事業部G2 ", "SI事業部G3", "SI事業部G4", "インバウンド事業部", "営業部", "管理部"})
+        Me.pdSrcDeparts.Location = New System.Drawing.Point(374, 151)
         Me.pdSrcDeparts.Name = "pdSrcDeparts"
         Me.pdSrcDeparts.Size = New System.Drawing.Size(132, 26)
         Me.pdSrcDeparts.TabIndex = 32
@@ -165,7 +168,7 @@ Partial Class ShowUsers
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(500, 128)
+        Me.Label5.Location = New System.Drawing.Point(527, 154)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(80, 18)
         Me.Label5.TabIndex = 33
@@ -174,7 +177,7 @@ Partial Class ShowUsers
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(766, 129)
+        Me.Label6.Location = New System.Drawing.Point(793, 155)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(105, 18)
         Me.Label6.TabIndex = 35
@@ -182,7 +185,7 @@ Partial Class ShowUsers
         '
         'txtSrcMail
         '
-        Me.txtSrcMail.Location = New System.Drawing.Point(877, 125)
+        Me.txtSrcMail.Location = New System.Drawing.Point(904, 151)
         Me.txtSrcMail.Name = "txtSrcMail"
         Me.txtSrcMail.Size = New System.Drawing.Size(156, 25)
         Me.txtSrcMail.TabIndex = 36
@@ -190,7 +193,7 @@ Partial Class ShowUsers
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(11, 166)
+        Me.Label7.Location = New System.Drawing.Point(38, 192)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(44, 18)
         Me.Label7.TabIndex = 37
@@ -198,7 +201,7 @@ Partial Class ShowUsers
         '
         'txtSrcTel
         '
-        Me.txtSrcTel.Location = New System.Drawing.Point(61, 166)
+        Me.txtSrcTel.Location = New System.Drawing.Point(88, 192)
         Me.txtSrcTel.Name = "txtSrcTel"
         Me.txtSrcTel.Size = New System.Drawing.Size(100, 25)
         Me.txtSrcTel.TabIndex = 38
@@ -206,7 +209,7 @@ Partial Class ShowUsers
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(167, 166)
+        Me.Label8.Location = New System.Drawing.Point(194, 192)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(44, 18)
         Me.Label8.TabIndex = 39
@@ -214,15 +217,15 @@ Partial Class ShowUsers
         '
         'txtSrcAddress
         '
-        Me.txtSrcAddress.Location = New System.Drawing.Point(217, 166)
+        Me.txtSrcAddress.Location = New System.Drawing.Point(244, 192)
         Me.txtSrcAddress.Name = "txtSrcAddress"
-        Me.txtSrcAddress.Size = New System.Drawing.Size(251, 25)
+        Me.txtSrcAddress.Size = New System.Drawing.Size(262, 25)
         Me.txtSrcAddress.TabIndex = 40
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(472, 166)
+        Me.Label9.Location = New System.Drawing.Point(527, 195)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 18)
         Me.Label9.TabIndex = 41
@@ -231,8 +234,8 @@ Partial Class ShowUsers
         'pdSrcGra
         '
         Me.pdSrcGra.FormattingEnabled = True
-        Me.pdSrcGra.Items.AddRange(New Object() {"大学院（博士）", "大学院（修士）", "大学", "高専", "短期大学", "専門・専修", "高校", "その他"})
-        Me.pdSrcGra.Location = New System.Drawing.Point(560, 165)
+        Me.pdSrcGra.Items.AddRange(New Object() {"", "大学院（博士）", "大学院（修士）", "大学", "高専", "短期大学", "専門・専修", "高校", "その他"})
+        Me.pdSrcGra.Location = New System.Drawing.Point(622, 194)
         Me.pdSrcGra.Name = "pdSrcGra"
         Me.pdSrcGra.Size = New System.Drawing.Size(121, 26)
         Me.pdSrcGra.TabIndex = 42
@@ -240,7 +243,7 @@ Partial Class ShowUsers
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(687, 166)
+        Me.Label10.Location = New System.Drawing.Point(778, 195)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(44, 18)
         Me.Label10.TabIndex = 43
@@ -248,7 +251,7 @@ Partial Class ShowUsers
         '
         'txtSrcSkill
         '
-        Me.txtSrcSkill.Location = New System.Drawing.Point(737, 166)
+        Me.txtSrcSkill.Location = New System.Drawing.Point(828, 195)
         Me.txtSrcSkill.Name = "txtSrcSkill"
         Me.txtSrcSkill.Size = New System.Drawing.Size(100, 25)
         Me.txtSrcSkill.TabIndex = 44
@@ -256,7 +259,7 @@ Partial Class ShowUsers
         'btnSearch
         '
         Me.btnSearch.AutoSize = True
-        Me.btnSearch.Location = New System.Drawing.Point(877, 161)
+        Me.btnSearch.Location = New System.Drawing.Point(975, 193)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(75, 28)
         Me.btnSearch.TabIndex = 45
@@ -266,7 +269,7 @@ Partial Class ShowUsers
         'btnClearSearch
         '
         Me.btnClearSearch.AutoSize = True
-        Me.btnClearSearch.Location = New System.Drawing.Point(958, 161)
+        Me.btnClearSearch.Location = New System.Drawing.Point(1056, 193)
         Me.btnClearSearch.Name = "btnClearSearch"
         Me.btnClearSearch.Size = New System.Drawing.Size(75, 28)
         Me.btnClearSearch.TabIndex = 46
@@ -276,11 +279,12 @@ Partial Class ShowUsers
         'dgvShowUsers
         '
         Me.dgvShowUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvShowUsers.Location = New System.Drawing.Point(14, 226)
+        Me.dgvShowUsers.Location = New System.Drawing.Point(14, 245)
         Me.dgvShowUsers.Name = "dgvShowUsers"
+        Me.dgvShowUsers.RowHeadersVisible = False
         Me.dgvShowUsers.RowHeadersWidth = 62
         Me.dgvShowUsers.RowTemplate.Height = 27
-        Me.dgvShowUsers.Size = New System.Drawing.Size(1019, 278)
+        Me.dgvShowUsers.Size = New System.Drawing.Size(1098, 313)
         Me.dgvShowUsers.TabIndex = 47
         '
         'BindingNavigator1
@@ -297,7 +301,7 @@ Partial Class ShowUsers
         Me.BindingNavigator1.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.BindingNavigator1.Name = "BindingNavigator1"
         Me.BindingNavigator1.PositionItem = Me.BindingNavigatorPositionItem
-        Me.BindingNavigator1.Size = New System.Drawing.Size(1045, 33)
+        Me.BindingNavigator1.Size = New System.Drawing.Size(1165, 38)
         Me.BindingNavigator1.TabIndex = 48
         Me.BindingNavigator1.Text = "BindingNavigator1"
         '
@@ -307,13 +311,13 @@ Partial Class ShowUsers
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorAddNewItem.Text = "新規追加"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(44, 28)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(44, 33)
         Me.BindingNavigatorCountItem.Text = "/ {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "項目の総数"
         '
@@ -323,7 +327,7 @@ Partial Class ShowUsers
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorDeleteItem.Text = "削除"
         '
         'BindingNavigatorMoveFirstItem
@@ -332,7 +336,7 @@ Partial Class ShowUsers
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorMoveFirstItem.Text = "最初に移動"
         '
         'BindingNavigatorMovePreviousItem
@@ -341,18 +345,19 @@ Partial Class ShowUsers
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorMovePreviousItem.Text = "前に戻る"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 33)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 38)
         '
         'BindingNavigatorPositionItem
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "位置"
         Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Yu Gothic UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 31)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -361,7 +366,7 @@ Partial Class ShowUsers
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 33)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 38)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -369,7 +374,7 @@ Partial Class ShowUsers
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorMoveNextItem.Text = "次に移動"
         '
         'BindingNavigatorMoveLastItem
@@ -378,39 +383,66 @@ Partial Class ShowUsers
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorMoveLastItem.Text = "最後に移動"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 33)
-        '
-        'btnGoToEdit
-        '
-        Me.btnGoToEdit.AutoSize = True
-        Me.btnGoToEdit.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnGoToEdit.Location = New System.Drawing.Point(787, 12)
-        Me.btnGoToEdit.Name = "btnGoToEdit"
-        Me.btnGoToEdit.Size = New System.Drawing.Size(102, 32)
-        Me.btnGoToEdit.TabIndex = 49
-        Me.btnGoToEdit.Text = "編集"
-        Me.btnGoToEdit.UseVisualStyleBackColor = True
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 38)
         '
         'txtSrcBirth
         '
-        Me.txtSrcBirth.Location = New System.Drawing.Point(595, 125)
+        Me.txtSrcBirth.Location = New System.Drawing.Point(622, 151)
         Me.txtSrcBirth.Name = "txtSrcBirth"
         Me.txtSrcBirth.Size = New System.Drawing.Size(156, 25)
         Me.txtSrcBirth.TabIndex = 50
+        '
+        'txtSrcID
+        '
+        Me.txtSrcID.Location = New System.Drawing.Point(769, 62)
+        Me.txtSrcID.Name = "txtSrcID"
+        Me.txtSrcID.Size = New System.Drawing.Size(127, 25)
+        Me.txtSrcID.TabIndex = 51
+        '
+        'btnEditByID
+        '
+        Me.btnEditByID.Location = New System.Drawing.Point(906, 58)
+        Me.btnEditByID.Name = "btnEditByID"
+        Me.btnEditByID.Size = New System.Drawing.Size(232, 32)
+        Me.btnEditByID.TabIndex = 52
+        Me.btnEditByID.Text = "該当するIDのデータを編集"
+        Me.btnEditByID.UseVisualStyleBackColor = True
+        '
+        'btnDeleteByID
+        '
+        Me.btnDeleteByID.Location = New System.Drawing.Point(906, 96)
+        Me.btnDeleteByID.Name = "btnDeleteByID"
+        Me.btnDeleteByID.Size = New System.Drawing.Size(232, 34)
+        Me.btnDeleteByID.TabIndex = 53
+        Me.btnDeleteByID.Text = "該当するIDのデータを削除"
+        Me.btnDeleteByID.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label11.Location = New System.Drawing.Point(766, 20)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(101, 22)
+        Me.Label11.TabIndex = 54
+        Me.Label11.Text = "IDを入力："
         '
         'ShowUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1045, 537)
+        Me.ClientSize = New System.Drawing.Size(1165, 597)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.btnDeleteByID)
+        Me.Controls.Add(Me.btnEditByID)
+        Me.Controls.Add(Me.txtSrcID)
         Me.Controls.Add(Me.txtSrcBirth)
-        Me.Controls.Add(Me.btnGoToEdit)
         Me.Controls.Add(Me.btnGoToNew)
         Me.Controls.Add(Me.dgvShowUsers)
         Me.Controls.Add(Me.btnClearSearch)
@@ -484,6 +516,9 @@ Partial Class ShowUsers
     Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents btnGoToEdit As Button
     Friend WithEvents txtSrcBirth As TextBox
+    Friend WithEvents txtSrcID As TextBox
+    Friend WithEvents btnEditByID As Button
+    Friend WithEvents btnDeleteByID As Button
+    Friend WithEvents Label11 As Label
 End Class

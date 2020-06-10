@@ -137,6 +137,12 @@ Public Class NewUser
     Private Sub btnAddCancel_Click(sender As Object, e As EventArgs) Handles btnAddCancel.Click
         Close()
     End Sub
+    'check if input already exist
+    Public Sub checkInput()
+
+
+    End Sub
+
     '入力した内容を保存する by running Manage.upNewUser stored procedure
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'create the SqlConnection object
@@ -171,6 +177,9 @@ Public Class NewUser
                 'add userskill input parament
                 sqlCommand.Parameters.Add(New SqlParameter("@UserSkill", SqlDbType.NVarChar, 20))
                 sqlCommand.Parameters("@UserSkill").Value = txtAddSkill.Text
+                'add userimage input parament
+                sqlCommand.Parameters.Add(New SqlParameter("@UserImage", SqlDbType.NVarChar, 100))
+                sqlCommand.Parameters("@UserImage").Value = OpenFileDialog1.FileName
 
                 Try
                     'open the connection
@@ -187,7 +196,7 @@ Public Class NewUser
             End Using
         End Using
     End Sub
-
+    'add picture
     Private Sub btnAddPic_Click(sender As Object, e As EventArgs) Handles btnAddPic.Click
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
             PictureBox1.Load(OpenFileDialog1.FileName)

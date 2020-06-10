@@ -1,0 +1,49 @@
+SS事業部G1
+SS事業部G2
+SI事業部G1
+SI事業部G2 
+SI事業部G3
+SI事業部G4
+インバウンド事業部
+営業部
+管理部
+
+
+
+
+create schema [Manage] 
+      AUTHORIZATION [dbo];
+GO
+create table [Manage].[User](
+[UserID] int identity(1,1)not null ,
+[UserName] nvarchar(40) not null,
+[UserGender] nvarchar(1) not null,
+[UserDeparts] nvarchar(10) not null,
+[UserBirth] datetime not null,
+[UserMail] nvarchar(50) not null,
+[UserTel] nvarchar(13) not null,
+[UserAddress] nvarchar(80) not null,
+[UserGra] nvarchar(8) not null,
+[UserSkill] nvarchar(20) null
+);
+
+
+create procedure [Manage].[upNewUser]
+  @UserName nvarchar(40),@UserGender nvarchar,@UserDeparts nvarchar(10),@UserBirth date,@UserMail nvarchar(50),@UserTel nvarchar(13),@UserAddress nvarchar(80),@UserGra nvarchar(8),@UserSkill nvarchar(20) ,@UserImage nvarchar(100)
+as
+begin transaction
+insert into [Manage].[User] (UserName,UserGender,UserDeparts,UserBirth,UserMail,UserTel,UserAddress,UserGra,UserSkill,UserImage) 
+  values (@UserName,@UserGender,@UserDeparts,@UserBirth,@UserMail,@UserTel,@UserAddress,@UserGra,@UserSkill,@UserImage)
+commit transaction
+go
+
+create procedure [Manage].[uspUpdate]
+  @UserID int,@UserName nvarchar(40),@UserGender nvarchar,@UserDeparts nvarchar(10),@UserBirth date,@UserMail nvarchar(50),@UserTel nvarchar(13),@UserAddress nvarchar(80),@UserGra nvarchar(8),@UserSkill nvarchar(20)
+as
+begin transaction
+update [Manage].[User]
+set
+UserName=@UserName,UserGender=@UserGender,UserDeparts=@UserDeparts,UserBirth=@UserBirth,UserMail=@UserMail,UserTel=@UserTel,UserAddress=@UserAddress,UserGra=@UserGra,UserSkill=@UserSkill 
+where [UserID] = @UserID
+commit transaction
+go

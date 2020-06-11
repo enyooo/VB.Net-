@@ -11,6 +11,7 @@ Public Class NewUser
     Private userAddressValue As String
     Private userGraValue As String
     Private userSkillValue As String
+    Private userimage As String = ""
     '氏名プロパティ
     Public Property userName() As String
         Get
@@ -139,10 +140,9 @@ Public Class NewUser
     End Sub
     'check if input already exist
     Public Sub checkInput()
-
+        'Dim check = userName() + userGender() + userDeparts() + userBirth() + userMail() + userTel() + userAddress() + userGra()
 
     End Sub
-
     '入力した内容を保存する by running Manage.upNewUser stored procedure
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'create the SqlConnection object
@@ -168,6 +168,7 @@ Public Class NewUser
                 'add usertel input parament
                 sqlCommand.Parameters.Add(New SqlParameter("@UserTel", SqlDbType.NVarChar, 13))
                 sqlCommand.Parameters("@UserTel").Value = txtAddTel.Text
+
                 'add useraddress input parament
                 sqlCommand.Parameters.Add(New SqlParameter("@UserAddress", SqlDbType.NVarChar, 80))
                 sqlCommand.Parameters("@UserAddress").Value = txtAddAddress.Text
@@ -179,7 +180,7 @@ Public Class NewUser
                 sqlCommand.Parameters("@UserSkill").Value = txtAddSkill.Text
                 'add userimage input parament
                 sqlCommand.Parameters.Add(New SqlParameter("@UserImage", SqlDbType.NVarChar, 100))
-                sqlCommand.Parameters("@UserImage").Value = OpenFileDialog1.FileName
+                sqlCommand.Parameters("@UserImage").Value = userimage
 
                 Try
                     'open the connection
@@ -200,10 +201,20 @@ Public Class NewUser
     Private Sub btnAddPic_Click(sender As Object, e As EventArgs) Handles btnAddPic.Click
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
             PictureBox1.Load(OpenFileDialog1.FileName)
+            'transfer image to C:img folder
+            Dim temp As String = System.IO.Path.GetFileName(OpenFileDialog1.FileName)
+            Dim path As String = "C:\img\" + temp
+            Try
+                System.IO.File.Copy(OpenFileDialog1.FileName, path)
+            Catch ex As Exception
+                MessageBox.Show("could not copy")
+            End Try
+            userimage = path
         End If
     End Sub
     'clear picture
     Private Sub btnCancelPic_Click(sender As Object, e As EventArgs) Handles btnCancelPic.Click
         PictureBox1.Image = Nothing
+        userimage = ""
     End Sub
 End Class

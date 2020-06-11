@@ -65,10 +65,12 @@ Partial Class ShowUsers
         Me.btnEditByID = New System.Windows.Forms.Button()
         Me.btnDeleteByID = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvShowUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -85,6 +87,7 @@ Partial Class ShowUsers
         '
         Me.Logout.AutoSize = True
         Me.Logout.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Logout.ForeColor = System.Drawing.Color.Maroon
         Me.Logout.Location = New System.Drawing.Point(1036, 12)
         Me.Logout.Name = "Logout"
         Me.Logout.Size = New System.Drawing.Size(102, 32)
@@ -96,6 +99,7 @@ Partial Class ShowUsers
         '
         Me.btnGoToNew.AutoSize = True
         Me.btnGoToNew.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnGoToNew.ForeColor = System.Drawing.SystemColors.Highlight
         Me.btnGoToNew.Location = New System.Drawing.Point(906, 12)
         Me.btnGoToNew.Name = "btnGoToNew"
         Me.btnGoToNew.Size = New System.Drawing.Size(102, 32)
@@ -237,7 +241,7 @@ Partial Class ShowUsers
         Me.pdSrcGra.Items.AddRange(New Object() {"", "大学院（博士）", "大学院（修士）", "大学", "高専", "短期大学", "専門・専修", "高校", "その他"})
         Me.pdSrcGra.Location = New System.Drawing.Point(622, 194)
         Me.pdSrcGra.Name = "pdSrcGra"
-        Me.pdSrcGra.Size = New System.Drawing.Size(121, 26)
+        Me.pdSrcGra.Size = New System.Drawing.Size(136, 26)
         Me.pdSrcGra.TabIndex = 42
         '
         'Label10
@@ -400,34 +404,38 @@ Partial Class ShowUsers
         '
         'txtSrcID
         '
-        Me.txtSrcID.Location = New System.Drawing.Point(769, 62)
+        Me.txtSrcID.Location = New System.Drawing.Point(1011, 56)
         Me.txtSrcID.Name = "txtSrcID"
         Me.txtSrcID.Size = New System.Drawing.Size(127, 25)
         Me.txtSrcID.TabIndex = 51
         '
         'btnEditByID
         '
-        Me.btnEditByID.Location = New System.Drawing.Point(906, 58)
+        Me.btnEditByID.AutoSize = True
+        Me.btnEditByID.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.btnEditByID.Location = New System.Drawing.Point(702, 94)
         Me.btnEditByID.Name = "btnEditByID"
-        Me.btnEditByID.Size = New System.Drawing.Size(232, 32)
+        Me.btnEditByID.Size = New System.Drawing.Size(206, 32)
         Me.btnEditByID.TabIndex = 52
-        Me.btnEditByID.Text = "該当するIDのデータを編集"
+        Me.btnEditByID.Text = "該当する社員情報を編集"
         Me.btnEditByID.UseVisualStyleBackColor = True
         '
         'btnDeleteByID
         '
-        Me.btnDeleteByID.Location = New System.Drawing.Point(906, 96)
+        Me.btnDeleteByID.AutoSize = True
+        Me.btnDeleteByID.ForeColor = System.Drawing.Color.DarkRed
+        Me.btnDeleteByID.Location = New System.Drawing.Point(932, 94)
         Me.btnDeleteByID.Name = "btnDeleteByID"
-        Me.btnDeleteByID.Size = New System.Drawing.Size(232, 34)
+        Me.btnDeleteByID.Size = New System.Drawing.Size(206, 34)
         Me.btnDeleteByID.TabIndex = 53
-        Me.btnDeleteByID.Text = "該当するIDのデータを削除"
+        Me.btnDeleteByID.Text = "該当する社員情報を削除"
         Me.btnDeleteByID.UseVisualStyleBackColor = True
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label11.Location = New System.Drawing.Point(766, 20)
+        Me.Label11.Location = New System.Drawing.Point(888, 56)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(101, 22)
         Me.Label11.TabIndex = 54
@@ -468,6 +476,7 @@ Partial Class ShowUsers
         Me.Controls.Add(Me.Logout)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BindingNavigator1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ShowUsers"
         Me.Text = "情報一覧"
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -475,6 +484,7 @@ Partial Class ShowUsers
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.BindingNavigator1.PerformLayout()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -521,4 +531,5 @@ Partial Class ShowUsers
     Friend WithEvents btnEditByID As Button
     Friend WithEvents btnDeleteByID As Button
     Friend WithEvents Label11 As Label
+    Friend WithEvents BindingSource1 As BindingSource
 End Class

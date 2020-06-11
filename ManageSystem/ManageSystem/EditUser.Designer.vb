@@ -51,6 +51,7 @@ Partial Class EditUser
         Me.txtEditByID = New System.Windows.Forms.TextBox()
         Me.btnSrcForEdit = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,7 +60,7 @@ Partial Class EditUser
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("MS UI Gothic", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label1.Location = New System.Drawing.Point(272, 18)
+        Me.Label1.Location = New System.Drawing.Point(325, 33)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(180, 28)
         Me.Label1.TabIndex = 0
@@ -68,13 +69,15 @@ Partial Class EditUser
         'btnEditCancel
         '
         Me.btnEditCancel.AutoSize = True
+        Me.btnEditCancel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.btnEditCancel.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnEditCancel.ForeColor = System.Drawing.Color.DarkRed
         Me.btnEditCancel.Location = New System.Drawing.Point(363, 450)
         Me.btnEditCancel.Name = "btnEditCancel"
         Me.btnEditCancel.Size = New System.Drawing.Size(125, 32)
         Me.btnEditCancel.TabIndex = 46
         Me.btnEditCancel.Text = "キャンセル"
-        Me.btnEditCancel.UseVisualStyleBackColor = True
+        Me.btnEditCancel.UseVisualStyleBackColor = False
         '
         'btnEdit
         '
@@ -116,7 +119,7 @@ Partial Class EditUser
         Me.pdEditGra.Items.AddRange(New Object() {"大学院（博士）", "大学院（修士）", "大学", "高専", "短期大学", "専門・専修", "高校", "その他"})
         Me.pdEditGra.Location = New System.Drawing.Point(149, 390)
         Me.pdEditGra.Name = "pdEditGra"
-        Me.pdEditGra.Size = New System.Drawing.Size(130, 26)
+        Me.pdEditGra.Size = New System.Drawing.Size(147, 26)
         Me.pdEditGra.TabIndex = 41
         '
         'Label9
@@ -177,7 +180,7 @@ Partial Class EditUser
         Me.pdEditDeparts.Items.AddRange(New Object() {"SS事業部G1", "SS事業部G2", "SI事業部G1", "SI事業部G2 ", "SI事業部G3", "SI事業部G4", "インバウンド事業部", "営業部", "管理部"})
         Me.pdEditDeparts.Location = New System.Drawing.Point(106, 199)
         Me.pdEditDeparts.Name = "pdEditDeparts"
-        Me.pdEditDeparts.Size = New System.Drawing.Size(140, 26)
+        Me.pdEditDeparts.Size = New System.Drawing.Size(165, 26)
         Me.pdEditDeparts.TabIndex = 34
         '
         'Label5
@@ -202,9 +205,9 @@ Partial Class EditUser
         '
         Me.btnEditPic.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnEditPic.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnEditPic.Location = New System.Drawing.Point(616, 193)
+        Me.btnEditPic.Location = New System.Drawing.Point(616, 207)
         Me.btnEditPic.Name = "btnEditPic"
-        Me.btnEditPic.Size = New System.Drawing.Size(129, 38)
+        Me.btnEditPic.Size = New System.Drawing.Size(150, 38)
         Me.btnEditPic.TabIndex = 31
         Me.btnEditPic.Text = "アップロード"
         Me.btnEditPic.UseVisualStyleBackColor = True
@@ -214,7 +217,7 @@ Partial Class EditUser
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Location = New System.Drawing.Point(616, 24)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(129, 153)
+        Me.PictureBox1.Size = New System.Drawing.Size(150, 172)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 30
         Me.PictureBox1.TabStop = False
@@ -274,9 +277,10 @@ Partial Class EditUser
         'btnCancelPic
         '
         Me.btnCancelPic.AutoSize = True
-        Me.btnCancelPic.Location = New System.Drawing.Point(616, 257)
+        Me.btnCancelPic.ForeColor = System.Drawing.Color.DarkRed
+        Me.btnCancelPic.Location = New System.Drawing.Point(616, 253)
         Me.btnCancelPic.Name = "btnCancelPic"
-        Me.btnCancelPic.Size = New System.Drawing.Size(129, 38)
+        Me.btnCancelPic.Size = New System.Drawing.Size(150, 38)
         Me.btnCancelPic.TabIndex = 49
         Me.btnCancelPic.Text = "取り消し"
         Me.btnCancelPic.UseVisualStyleBackColor = True
@@ -284,7 +288,7 @@ Partial Class EditUser
         'txtEditByID
         '
         Me.txtEditByID.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtEditByID.Location = New System.Drawing.Point(388, 70)
+        Me.txtEditByID.Location = New System.Drawing.Point(107, 100)
         Me.txtEditByID.Name = "txtEditByID"
         Me.txtEditByID.Size = New System.Drawing.Size(100, 25)
         Me.txtEditByID.TabIndex = 50
@@ -292,7 +296,7 @@ Partial Class EditUser
         'btnSrcForEdit
         '
         Me.btnSrcForEdit.AutoSize = True
-        Me.btnSrcForEdit.Location = New System.Drawing.Point(509, 68)
+        Me.btnSrcForEdit.Location = New System.Drawing.Point(246, 98)
         Me.btnSrcForEdit.Name = "btnSrcForEdit"
         Me.btnSrcForEdit.Size = New System.Drawing.Size(75, 28)
         Me.btnSrcForEdit.TabIndex = 51
@@ -303,11 +307,21 @@ Partial Class EditUser
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(32, 102)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(69, 18)
+        Me.Label11.TabIndex = 52
+        Me.Label11.Text = "社員ID："
+        '
         'EditUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(798, 506)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnSrcForEdit)
         Me.Controls.Add(Me.txtEditByID)
         Me.Controls.Add(Me.btnCancelPic)
@@ -335,6 +349,7 @@ Partial Class EditUser
         Me.Controls.Add(Me.txtEditName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EditUser"
         Me.Text = "情報編集"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -372,4 +387,5 @@ Partial Class EditUser
     Friend WithEvents txtEditByID As TextBox
     Friend WithEvents btnSrcForEdit As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Label11 As Label
 End Class

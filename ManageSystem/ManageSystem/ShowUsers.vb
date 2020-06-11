@@ -7,11 +7,6 @@ Public Class ShowUsers
         Dim frm As Form = New NewUser()
         frm.Show()
     End Sub
-    '編集画面へ遷移
-    Private Sub btnGoToEdit_Click(sender As Object, e As EventArgs)
-        Dim frm As Form = New EditUser()
-        frm.Show()
-    End Sub
     'ログアウト処理 
     Private Sub Logout_Click(sender As Object, e As EventArgs) Handles Logout.Click
         Close()
@@ -36,8 +31,36 @@ Public Class ShowUsers
                     dataTable.Load(dataReader)
                     'display the data from datatable in the datagridview
                     Me.dgvShowUsers.DataSource = dataTable
+                    'binding navigator with data griw view
+                    Me.BindingSource1.DataSource = dataTable
+                    Me.BindingNavigator1.BindingSource = Me.BindingSource1
+
+                    'show picture
+                    Dim ImageReader As SqlDataReader = sqlCommand.ExecuteReader()
+                    'add picture colum
+                    Dim column As New DataGridViewImageColumn()
+                    column.Name = "Image"
+                    column.DefaultCellStyle.NullValue = Nothing
+                    column.ImageLayout = DataGridViewImageCellLayout.Zoom
+                    dgvShowUsers.Columns.Insert(0, column)
+
+                    Dim i As Integer
+                    If ImageReader.HasRows Then
+                        While ImageReader.Read()
+                            If ImageReader(10).ToString <> "" Then
+                                dgvShowUsers.Rows(i).Cells(0).Value = New Bitmap(ImageReader(10).ToString)
+                                i += 1
+                            Else
+                                i += 1
+                            End If
+                        End While
+                    End If
+                    ImageReader.Close()
+
+
                     'close sqldatareader
                     dataReader.Close()
+
                 Catch
                     MessageBox.Show("data could not be load")
                 Finally
@@ -45,6 +68,32 @@ Public Class ShowUsers
                 End Try
             End Using
         End Using
+    End Sub
+    'フォームインスタンス
+    Private Shared formInstance As ShowUsers
+    Public Shared Property ShowuserInstance() As ShowUsers
+        Get
+            Return formInstance
+        End Get
+        Set(ByVal Value As ShowUsers)
+            formInstance = Value
+        End Set
+    End Property
+    '入力したIDを取得するプロパティ
+    Public Property IDbox() As String
+        Get
+            Return txtSrcID.Text
+        End Get
+        Set(ByVal Value As String)
+            txtSrcID.Text = Value
+        End Set
+    End Property
+    Private Sub btnEditByID_Click(sender As Object, e As EventArgs) Handles btnEditByID.Click
+        Dim f As New EditUser
+        '一覧画面情報を編集画面に渡す 
+        f.ShowDialog(Me)
+        '画面へ遷移
+        f.Dispose()
     End Sub
     '削除処理
     Private Sub btnDeleteByID_Click(sender As Object, e As EventArgs) Handles btnDeleteByID.Click
@@ -58,6 +107,7 @@ Public Class ShowUsers
                     connection.Open()
                     Dim dataReader As SqlDataReader = sqlCommand.ExecuteReader()
                     dataReader.Close()
+                    MessageBox.Show("data has been deleted successfully")
                 Catch
                     MessageBox.Show("data could not be delete")
                 End Try
@@ -129,6 +179,24 @@ Public Class ShowUsers
                     Dim dataTable As New DataTable()
                     dataTable.Load(dataReader)
                     Me.dgvShowUsers.DataSource = dataTable
+                    Me.BindingSource1.DataSource = dataTable
+                    Me.BindingNavigator1.BindingSource = Me.BindingSource1
+                    'show picture
+                    Dim ImageReader As SqlDataReader = SqlCommand.ExecuteReader()
+
+                    Dim i As Integer
+                    If ImageReader.HasRows Then
+                        While ImageReader.Read()
+                            If ImageReader(10).ToString <> "" Then
+                                dgvShowUsers.Rows(i).Cells(0).Value = New Bitmap(ImageReader(10).ToString)
+                                i += 1
+                            Else
+                                i += 1
+                            End If
+                        End While
+                    End If
+                    ImageReader.Close()
+
                     dataReader.Close()
                 Catch
                     MessageBox.Show("data could not be load")
@@ -149,30 +217,41 @@ Public Class ShowUsers
         txtSrcAddress.Clear()
         pdSrcGra.Text = pdSrcGra.GetItemText(pdSrcGra.Items(0))
         txtSrcSkill.Clear()
-    End Sub
-    'フォームインスタンス
-    Private Shared formInstance As ShowUsers
-    Public Shared Property ShowuserInstance() As ShowUsers
-        Get
-            Return formInstance
-        End Get
-        Set(ByVal Value As ShowUsers)
-            formInstance = Value
-        End Set
-    End Property
-    '入力したIDを取得するプロパティ
-    Public Property IDbox() As String
-        Get
-            Return txtSrcID.Text
-        End Get
-        Set(ByVal Value As String)
-            txtSrcID.Text = Value
-        End Set
-    End Property
-    Private Sub btnEditByID_Click(sender As Object, e As EventArgs) Handles btnEditByID.Click
-        Dim f As New EditUser
-        '一覧画面情報を編集画面に渡す 
-        f.ShowDialog(Me)
-        f.Dispose()
+        Using connection As New SqlConnection(My.Settings.connString)
+            Const sql As String = "select * from [Manage].[User]"
+            Using sqlCommand As New SqlCommand(sql, connection)
+
+                Try
+                    connection.Open()
+                    Dim dataReader As SqlDataReader = sqlCommand.ExecuteReader()
+                    Dim dataTable As New DataTable()
+                    dataTable.Load(dataReader)
+                    Me.dgvShowUsers.DataSource = dataTable
+                    Me.BindingSource1.DataSource = dataTable
+                    Me.BindingNavigator1.BindingSource = Me.BindingSource1
+                    'show picture
+                    Dim ImageReader As SqlDataReader = sqlCommand.ExecuteReader()
+
+                    Dim i As Integer
+                    If ImageReader.HasRows Then
+                        While ImageReader.Read()
+                            If ImageReader(10).ToString <> "" Then
+                                dgvShowUsers.Rows(i).Cells(0).Value = New Bitmap(ImageReader(10).ToString)
+                                i += 1
+                            Else
+                                i += 1
+                            End If
+                        End While
+                    End If
+                    ImageReader.Close()
+
+                    dataReader.Close()
+                Catch
+                    MessageBox.Show("data could not be load")
+                Finally
+                    connection.Close()
+                End Try
+            End Using
+        End Using
     End Sub
 End Class

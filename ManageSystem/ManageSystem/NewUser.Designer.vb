@@ -149,7 +149,7 @@ Partial Class NewUser
         Me.pdAddDeparts.Items.AddRange(New Object() {"SS事業部G1", "SS事業部G2", "SI事業部G1", "SI事業部G2 ", "SI事業部G3", "SI事業部G4", "インバウンド事業部", "営業部", "管理部"})
         Me.pdAddDeparts.Location = New System.Drawing.Point(114, 149)
         Me.pdAddDeparts.Name = "pdAddDeparts"
-        Me.pdAddDeparts.Size = New System.Drawing.Size(140, 26)
+        Me.pdAddDeparts.Size = New System.Drawing.Size(165, 26)
         Me.pdAddDeparts.TabIndex = 11
         '
         'dtpAddBirth
@@ -218,7 +218,7 @@ Partial Class NewUser
         Me.pdAddGra.Items.AddRange(New Object() {"大学院（博士）", "大学院（修士）", "大学", "高専", "短期大学", "専門・専修", "高校", "その他"})
         Me.pdAddGra.Location = New System.Drawing.Point(157, 340)
         Me.pdAddGra.Name = "pdAddGra"
-        Me.pdAddGra.Size = New System.Drawing.Size(130, 26)
+        Me.pdAddGra.Size = New System.Drawing.Size(148, 26)
         Me.pdAddGra.TabIndex = 19
         '
         'Label10
@@ -259,6 +259,7 @@ Partial Class NewUser
         '
         Me.btnAddCancel.AutoSize = True
         Me.btnAddCancel.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnAddCancel.ForeColor = System.Drawing.Color.DarkRed
         Me.btnAddCancel.Location = New System.Drawing.Point(334, 406)
         Me.btnAddCancel.Name = "btnAddCancel"
         Me.btnAddCancel.Size = New System.Drawing.Size(105, 32)
@@ -279,6 +280,7 @@ Partial Class NewUser
         'btnCancelPic
         '
         Me.btnCancelPic.AutoSize = True
+        Me.btnCancelPic.ForeColor = System.Drawing.Color.DarkRed
         Me.btnCancelPic.Location = New System.Drawing.Point(600, 241)
         Me.btnCancelPic.Name = "btnCancelPic"
         Me.btnCancelPic.Size = New System.Drawing.Size(129, 38)
@@ -316,6 +318,7 @@ Partial Class NewUser
         Me.Controls.Add(Me.txtAddName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NewUser"
         Me.Text = "新規登録"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

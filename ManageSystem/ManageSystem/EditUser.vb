@@ -1,14 +1,17 @@
 ﻿Imports System.Data.SqlClient
 Public Class EditUser
+    Private editIamge As String
+    Private dbImage As String = ""
     'キャンセル処理
     Private Sub btnEditCancel_Click(sender As Object, e As EventArgs) Handles btnEditCancel.Click
         Close()
     End Sub
+    'get id value from showUsers
     Private Sub EditUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim str As String = CType(Me.Owner, ShowUsers).IDbox
         txtEditByID.Text = str
     End Sub
-
+    'load date by search id
     Private Sub btnSrcForEdit_Click(sender As Object, e As EventArgs) Handles btnSrcForEdit.Click
         Using connection As New SqlConnection(My.Settings.connString)
             Dim sql As String = "select UserName,UserGender,UserDeparts,UserBirth,UserMail,UserTel,UserAddress,UserGra,UserSkill,UserImage from [Manage].[User] where UserID=@UserID"
@@ -30,7 +33,12 @@ Public Class EditUser
                         txtEditAddress.Text = dataReader(6).ToString
                         pdEditGra.SelectedItem = dataReader(7).ToString
                         txtEditSkill.Text = dataReader(8).ToString
-                        PictureBox1.Load(dataReader(9).ToString)
+
+                        If dataReader(9).ToString <> "" Then
+                            PictureBox1.Load(dataReader(9).ToString)
+                            dbImage = dataReader(9).ToString
+                        End If
+
                     End While
                     dataReader.Close()
                 Catch ex As Exception
@@ -77,6 +85,14 @@ Public Class EditUser
                 'add userskill input parament
                 sqlCommand.Parameters.Add(New SqlParameter("@UserSkill", SqlDbType.NVarChar, 20))
                 sqlCommand.Parameters("@UserSkill").Value = txtEditSkill.Text
+                'add userimage input parament
+                sqlCommand.Parameters.Add(New SqlParameter("@UserImage", SqlDbType.NVarChar, 100))
+
+                If editIamge <> "" Then
+                    sqlCommand.Parameters("@UserImage").Value = editIamge
+                Else
+                    sqlCommand.Parameters("@UserImage").Value = dbImage
+                End If
 
                 Try
                     'open the connection
@@ -92,5 +108,25 @@ Public Class EditUser
                 End Try
             End Using
         End Using
+    End Sub
+    'add picture
+    Private Sub btnEditPic_Click(sender As Object, e As EventArgs) Handles btnEditPic.Click
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            PictureBox1.Load(OpenFileDialog1.FileName)
+            'transfer image to C:img folder
+            Dim temp As String = System.IO.Path.GetFileName(OpenFileDialog1.FileName)
+            Dim path As String = "C:\img\" + temp
+            Try
+                System.IO.File.Copy(OpenFileDialog1.FileName, path)
+            Catch ex As Exception
+                MessageBox.Show("file already existed could not copy")
+            End Try
+            editIamge = path
+        End If
+    End Sub
+    'clear picture
+    Private Sub btnCancelPic_Click(sender As Object, e As EventArgs) Handles btnCancelPic.Click
+        PictureBox1.Image = Nothing
+        editIamge = ""
     End Sub
 End Class

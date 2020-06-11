@@ -47,7 +47,7 @@ Partial Class Login
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label4.Location = New System.Drawing.Point(192, 164)
+        Me.Label4.Location = New System.Drawing.Point(193, 172)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(139, 22)
         Me.Label4.TabIndex = 2
@@ -57,7 +57,7 @@ Partial Class Login
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label5.Location = New System.Drawing.Point(192, 245)
+        Me.Label5.Location = New System.Drawing.Point(193, 253)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(107, 22)
         Me.Label5.TabIndex = 3
@@ -66,7 +66,7 @@ Partial Class Login
         'txtLoginMail
         '
         Me.txtLoginMail.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtLoginMail.Location = New System.Drawing.Point(405, 164)
+        Me.txtLoginMail.Location = New System.Drawing.Point(406, 172)
         Me.txtLoginMail.Name = "txtLoginMail"
         Me.txtLoginMail.Size = New System.Drawing.Size(160, 25)
         Me.txtLoginMail.TabIndex = 1
@@ -74,7 +74,7 @@ Partial Class Login
         'txtLoginPass
         '
         Me.txtLoginPass.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtLoginPass.Location = New System.Drawing.Point(405, 242)
+        Me.txtLoginPass.Location = New System.Drawing.Point(406, 250)
         Me.txtLoginPass.Name = "txtLoginPass"
         Me.txtLoginPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtLoginPass.Size = New System.Drawing.Size(160, 25)
@@ -83,7 +83,8 @@ Partial Class Login
         'btnLogin
         '
         Me.btnLogin.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnLogin.Location = New System.Drawing.Point(294, 331)
+        Me.btnLogin.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.btnLogin.Location = New System.Drawing.Point(304, 335)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(146, 42)
         Me.btnLogin.TabIndex = 3
@@ -112,6 +113,7 @@ Partial Class Login
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.Text = "ようこそ"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

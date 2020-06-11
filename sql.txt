@@ -27,6 +27,18 @@ create table [Manage].[User](
 [UserSkill] nvarchar(20) null
 );
 
+CREATE TABLE [Manage].[Info]
+(
+	[UserId] INT NOT NULL ,
+    [loginMail] NCHAR(50) NOT NULL, 
+    [loginPass] NCHAR(20) NOT NULL
+);
+go
+AlTER table [Manage].[Info] add constraint [FK_Info_User_UserID] FOREIGN KEY
+([UserID]) references [Manage].[User]([UserID]) on delete no action on update no action;
+go
+
+
 
 create procedure [Manage].[upNewUser]
   @UserName nvarchar(40),@UserGender nvarchar,@UserDeparts nvarchar(10),@UserBirth date,@UserMail nvarchar(50),@UserTel nvarchar(13),@UserAddress nvarchar(80),@UserGra nvarchar(8),@UserSkill nvarchar(20) ,@UserImage nvarchar(100)
@@ -37,13 +49,14 @@ insert into [Manage].[User] (UserName,UserGender,UserDeparts,UserBirth,UserMail,
 commit transaction
 go
 
+
 create procedure [Manage].[uspUpdate]
-  @UserID int,@UserName nvarchar(40),@UserGender nvarchar,@UserDeparts nvarchar(10),@UserBirth date,@UserMail nvarchar(50),@UserTel nvarchar(13),@UserAddress nvarchar(80),@UserGra nvarchar(8),@UserSkill nvarchar(20)
+  @UserID int,@UserName nvarchar(40),@UserGender nvarchar,@UserDeparts nvarchar(10),@UserBirth date,@UserMail nvarchar(50),@UserTel nvarchar(13),@UserAddress nvarchar(80),@UserGra nvarchar(8),@UserSkill nvarchar(20),@UserImage nvarchar(100)
 as
 begin transaction
 update [Manage].[User]
 set
-UserName=@UserName,UserGender=@UserGender,UserDeparts=@UserDeparts,UserBirth=@UserBirth,UserMail=@UserMail,UserTel=@UserTel,UserAddress=@UserAddress,UserGra=@UserGra,UserSkill=@UserSkill 
+UserName=@UserName,UserGender=@UserGender,UserDeparts=@UserDeparts,UserBirth=@UserBirth,UserMail=@UserMail,UserTel=@UserTel,UserAddress=@UserAddress,UserGra=@UserGra,UserSkill=@UserSkill,UserImage=@UserImage 
 where [UserID] = @UserID
 commit transaction
 go

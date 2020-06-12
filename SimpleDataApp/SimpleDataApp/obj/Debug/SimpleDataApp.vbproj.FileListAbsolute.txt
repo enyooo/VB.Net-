@@ -1,0 +1,14 @@
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.vbprojAssemblyReference.cache
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.Resources.resources
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.vbproj.GenerateResource.cache
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.vbproj.CoreCompileInputs.cache
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\bin\Debug\SimpleDataApp.exe.config
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\bin\Debug\SimpleDataApp.exe
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\bin\Debug\SimpleDataApp.pdb
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\bin\Debug\SimpleDataApp.xml
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.FillOrCancel.resources
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.NewCustomer.resources
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.exe
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.xml
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.pdb
+C:\Users\2017nec50_1\source\repos\SimpleDataApp\SimpleDataApp\obj\Debug\SimpleDataApp.ナビゲーション.resources

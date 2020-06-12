@@ -1,0 +1,12 @@
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\bin\Debug\MathQuiz.exe.config
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\bin\Debug\MathQuiz.exe
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\bin\Debug\MathQuiz.pdb
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\bin\Debug\MathQuiz.xml
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\obj\Debug\MathQuiz.vbprojAssemblyReference.cache
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\obj\Debug\MathQuiz.Form1.resources
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\obj\Debug\MathQuiz.Resources.resources
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\obj\Debug\MathQuiz.vbproj.GenerateResource.cache
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\obj\Debug\MathQuiz.vbproj.CoreCompileInputs.cache
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\obj\Debug\MathQuiz.exe
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\obj\Debug\MathQuiz.xml
+C:\Users\2017nec50_1\source\repos\MathQuiz\MathQuiz\obj\Debug\MathQuiz.pdb
